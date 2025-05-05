@@ -1,6 +1,9 @@
 # Advanced-IP-Scanner-MAC-vendors-database
 [Advanced IP scanner](https://www.advanced-ip-scanner.com/)というソフトウェアのMACベンダーを更新し、最新化させるためのソフトウェアです。
 
+## ダウンロード（最新版）
+- v1.0.0 Release [Advanced-IP-Scanner---MAC-vendors-database_v1.0.0_Release-Exe.zip](https://github.com/kamomilen/Advanced-IP-Scanner-MAC-vendors-database/releases/download/v1.0.0/Advanced-IP-Scanner---MAC-vendors-database_v1.0.0_Release-Exe.zip)
+
 ## 機能説明
 - 事前にAdvanced IP scannerをインストールしておきます。
 - 本ソフトウェアを起動する。
