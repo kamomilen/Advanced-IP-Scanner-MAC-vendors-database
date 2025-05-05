@@ -1,1 +1,19 @@
 # Advanced-IP-Scanner-MAC-vendors-database
+[Advanced IP scanner](https://www.advanced-ip-scanner.com/)というソフトウェアのMACベンダーを更新し、最新化させるためのソフトウェアです。
+
+## 機能説明
+- 事前にAdvanced IP scannerをインストールしておきます。
+- 本ソフトウェアを起動する。
+- Step1でボタンをクリックし、ブラウザ先から「Download JSON database(～ 6MB)」をクリックしてファイルをダウンロードする。
+- Step2でボタンをクリックする。使用するファイルを確認するダイアログが出るので、確認してOKボタンをクリックする。
+- Advanced IP scannerのMACベンダーファイルが更新されます。
+
+## その他
+- Advanced IP scannerのポータブルバージョンの対応は未実装です。
+- デフォルトインストールフォルダー（C:\Program Files (x86)\Advanced IP Scanner)にアクセスするため、管理者権限が必要です。
+- JSONファイルのダウンロードの自動化を行いたかったですが、開発コストが大きいため断念しました。
+
+## 参考元
+- 下記を参考にしてWindowsの更新アプリを作成しました。
+
+[https://github.com/schmurtzm/Advanced-IP-Scanner---MAC-vendors-database?tab=readme-ov-file](https://github.com/schmurtzm/Advanced-IP-Scanner---MAC-vendors-database?tab=readme-ov-file)
