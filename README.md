@@ -8,6 +8,9 @@
 - Step2でボタンをクリックする。使用するファイルを確認するダイアログが出るので、確認してOKボタンをクリックする。
 - Advanced IP scannerのMACベンダーファイルが更新されます。
 
+## 必須ランタイム
+- 事前に「.NET 8.0 Desktop Runtime」がインストールされている必要があります。
+
 ## その他
 - Advanced IP scannerのポータブルバージョンの対応は未実装です。
 - デフォルトインストールフォルダー（C:\Program Files (x86)\Advanced IP Scanner)にアクセスするため、管理者権限が必要です。
