@@ -1,6 +1,7 @@
 
 using System.Diagnostics;
 using System.Globalization;
+using System.Security.Policy;
 using System.Text;
 using System.Text.Json;
 
@@ -10,6 +11,8 @@ namespace Advanced_IP_Scanner___MAC_vendors_database
     {
         private string workJsonPath = Path.GetFullPath(@".\mac-vendors-export.json");
         private string downloadJsonPath = System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\Downloads\mac-vendors-export.json";
+        private string currentDirectoryPath = Path.GetFullPath(Directory.GetCurrentDirectory());
+        private string portableDirectoryPath = System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\AppData\Local\Temp\Advanced IP Scanner 2";
 
         public Form1()
         {
@@ -19,7 +22,7 @@ namespace Advanced_IP_Scanner___MAC_vendors_database
 
         private void ResourcesSetting()
         {
-            if(Thread.CurrentThread.CurrentUICulture.Name == "ja-JP")
+            if (Thread.CurrentThread.CurrentUICulture.Name == "ja-JP")
             {
                 “ú–{ŒêJapaniseToolStripMenuItem.Checked = true;
                 englishEnglishToolStripMenuItem.Checked = false;
@@ -41,25 +44,36 @@ namespace Advanced_IP_Scanner___MAC_vendors_database
             button_file_update.Text = Resources.FormButtonFileUpdate;
             button_open_browser.Text = Resources.FormButtonOpenBrowser;
             button_open_directory.Text = Resources.FormButtonOpenDirectory;
-
+            button_launch_exe.Text = Resources.FormButtonLaunchExe;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             try
             {
-                // Directory existence check 1.
-                if (Directory.Exists(textBox_dir_path.Text))
+                // Directory existence check 1.(Custom Install Path)
+                if (File.Exists(currentDirectoryPath + Path.DirectorySeparatorChar + "advanced_ip_scanner.exe"))
                 {
+                    textBox_dir_path.Text = currentDirectoryPath;
                     button_open_directory.Enabled = true;
+                    button_launch_exe.Enabled = true;
                     button_open_browser.Enabled = true;
                     return;
                 }
-                // Directory existence check 2.(Custom Install Path)
-                if (File.Exists(Path.GetFullPath(Directory.GetCurrentDirectory()) + Path.DirectorySeparatorChar + "advanced_ip_scanner.exe"))
+                // Directory existence check 2.
+                if (Directory.Exists(textBox_dir_path.Text))
                 {
-                    textBox_dir_path.Text = Path.GetFullPath(Directory.GetCurrentDirectory());
                     button_open_directory.Enabled = true;
+                    button_launch_exe.Enabled = true;
+                    button_open_browser.Enabled = true;
+                    return;
+                }
+                // Directory existence check 3.(Portable Install Path)
+                if (Directory.Exists(portableDirectoryPath))
+                {
+                    textBox_dir_path.Text = portableDirectoryPath;
+                    button_open_directory.Enabled = true;
+                    button_launch_exe.Enabled = true;
                     button_open_browser.Enabled = true;
                     return;
                 }
@@ -88,7 +102,7 @@ namespace Advanced_IP_Scanner___MAC_vendors_database
         {
             try
             {
-                string workJsonBackupPath = Path.GetFullPath(@".\") + "mac-vendors-export_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".json";
+                string workJsonBackupPath = currentDirectoryPath + Path.DirectorySeparatorChar + "mac-vendors-export_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".json";
                 string macFilePath = textBox_dir_path.Text + Path.DirectorySeparatorChar + "mac_interval_tree.txt";
                 string jsonFilePath;
                 bool moveFlag = false;
@@ -100,7 +114,7 @@ namespace Advanced_IP_Scanner___MAC_vendors_database
                 }
                 else if (File.Exists(downloadJsonPath))
                 {
-                    
+
                     moveFlag = true;
                     jsonFilePath = downloadJsonPath;
                 }
@@ -229,6 +243,15 @@ namespace Advanced_IP_Scanner___MAC_vendors_database
             englishEnglishToolStripMenuItem.Checked = false;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("ja-JP");
             ResourcesSetting();
+        }
+
+        private void button_launch_exe_Click(object sender, EventArgs e)
+        {
+            string exePath = textBox_dir_path.Text + Path.DirectorySeparatorChar + "advanced_ip_scanner.exe";
+            var startInfo = new System.Diagnostics.ProcessStartInfo(exePath);
+            startInfo.UseShellExecute = true;
+            startInfo.WorkingDirectory = textBox_dir_path.Text;
+            Process.Start(startInfo);
         }
     }
 }

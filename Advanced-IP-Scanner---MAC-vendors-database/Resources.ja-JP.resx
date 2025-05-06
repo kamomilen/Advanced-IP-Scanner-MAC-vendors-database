@@ -159,4 +159,7 @@
   <data name="FileUpdateCompletionNotification" xml:space="preserve">
     <value>ファイルを更新しました: [mac_interval_tree.txt]</value>
   </data>
+  <data name="FormButtonLaunchExe" xml:space="preserve">
+    <value>.exeを起動</value>
+  </data>
 </root>

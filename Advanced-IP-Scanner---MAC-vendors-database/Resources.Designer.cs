@@ -115,6 +115,15 @@ namespace Advanced_IP_Scanner___MAC_vendors_database {
         }
         
         /// <summary>
+        ///   Launch .exe に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string FormButtonLaunchExe {
+            get {
+                return ResourceManager.GetString("FormButtonLaunchExe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Please download the JSON file manually. (Open Browser) に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string FormButtonOpenBrowser {

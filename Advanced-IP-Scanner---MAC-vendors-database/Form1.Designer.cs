@@ -31,6 +31,7 @@
             label1 = new Label();
             textBox_dir_path = new TextBox();
             groupBox1 = new GroupBox();
+            button_launch_exe = new Button();
             button_open_directory = new Button();
             checkBox_backup = new CheckBox();
             button_file_update = new Button();
@@ -69,6 +70,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(button_launch_exe);
             groupBox1.Controls.Add(button_open_directory);
             groupBox1.Controls.Add(checkBox_backup);
             groupBox1.Controls.Add(label1);
@@ -82,6 +84,19 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Advanced IP Scanner";
             // 
+            // button_launch_exe
+            // 
+            button_launch_exe.Enabled = false;
+            button_launch_exe.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            button_launch_exe.Location = new Point(589, 80);
+            button_launch_exe.Margin = new Padding(4);
+            button_launch_exe.Name = "button_launch_exe";
+            button_launch_exe.Size = new Size(117, 60);
+            button_launch_exe.TabIndex = 7;
+            button_launch_exe.Text = "Launch .exe";
+            button_launch_exe.UseVisualStyleBackColor = true;
+            button_launch_exe.Click += button_launch_exe_Click;
+            // 
             // button_open_directory
             // 
             button_open_directory.Enabled = false;
@@ -89,7 +104,7 @@
             button_open_directory.Location = new Point(589, 20);
             button_open_directory.Margin = new Padding(4);
             button_open_directory.Name = "button_open_directory";
-            button_open_directory.Size = new Size(117, 63);
+            button_open_directory.Size = new Size(117, 60);
             button_open_directory.TabIndex = 6;
             button_open_directory.Text = "Open Directory";
             button_open_directory.UseVisualStyleBackColor = true;
@@ -239,5 +254,6 @@
         private ToolStripMenuItem languageToolStripMenuItem;
         private ToolStripMenuItem englishEnglishToolStripMenuItem;
         private ToolStripMenuItem 日本語JapaniseToolStripMenuItem;
+        private Button button_launch_exe;
     }
 }
