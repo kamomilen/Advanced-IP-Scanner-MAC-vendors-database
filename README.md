@@ -2,7 +2,8 @@
 [Advanced IP scanner](https://www.advanced-ip-scanner.com/)というソフトウェアのMACベンダーを更新し、最新化させるためのソフトウェアです。
 
 ## ダウンロード（最新版）
-- v1.0.0 Release [Advanced-IP-Scanner---MAC-vendors-database_v1.0.0_Release-Exe.zip](https://github.com/kamomilen/Advanced-IP-Scanner-MAC-vendors-database/releases/download/v1.0.0/Advanced-IP-Scanner---MAC-vendors-database_v1.0.0_Release-Exe.zip)
+- v1.1.0 (通常はこちら) [Advanced-IP-Scanner---MAC-vendors-database_v1.1.0_Release-Exe.zip](https://github.com/kamomilen/Advanced-IP-Scanner-MAC-vendors-database/releases/download/v1.1.0/Advanced-IP-Scanner---MAC-vendors-database_v1.1.0_Release-Exe.zip)
+- v1.1.0 (非管理者ユーザー) [Advanced-IP-Scanner---MAC-vendors-database_v1.1.0_Release-Exe.GeneralUser.zip](https://github.com/kamomilen/Advanced-IP-Scanner-MAC-vendors-database/releases/download/v1.1.0/Advanced-IP-Scanner---MAC-vendors-database_v1.1.0_Release-Exe.GeneralUser.zip)
 
 ## 機能説明
 - 事前にAdvanced IP scannerをインストールしておきます。
@@ -15,9 +16,9 @@
 - 事前に「.NET 8.0 Desktop Runtime」がインストールされている必要があります。
 
 ## その他
-- Advanced IP scannerのポータブルバージョンの対応は未実装です。
 - デフォルトインストールフォルダー（C:\Program Files (x86)\Advanced IP Scanner)にアクセスするため、管理者権限が必要です。
-- JSONファイルのダウンロードの自動化を行いたかったですが、開発コストが大きいため断念しました。
+- ポータブル実行（非管理者ユーザー）で運用する場合は通常版ではなく非管理者ユーザー版の方をご使用ください。
+- JSONファイルのダウンロード自動化を行いたかったですが、開発コストが大きいため断念しました。
 
 ## 参考元
 - 下記を参考にしてWindowsの更新アプリを作成しました。
