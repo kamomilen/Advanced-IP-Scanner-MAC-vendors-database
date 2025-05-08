@@ -24,3 +24,8 @@
 - 下記を参考にしてWindowsの更新アプリを作成しました。
 
 [https://github.com/schmurtzm/Advanced-IP-Scanner---MAC-vendors-database?tab=readme-ov-file](https://github.com/schmurtzm/Advanced-IP-Scanner---MAC-vendors-database?tab=readme-ov-file)
+
+## 補足など
+- 下記で補足などを記載しています。
+
+[https://zigsow.jp/item/371889/review/383996](https://zigsow.jp/item/371889/review/383996)
